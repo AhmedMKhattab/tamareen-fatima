@@ -3,132 +3,1136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تمارين فاطمة اليومية</title>
-  <link rel="manifest" href="/manifest.json">
+  <title>برنامج فاطمة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Tahoma', sans-serif;
-      background-color: #fff8f0;
-      color: #333;
+      font-family: 'Amiri', serif;
+      background-color: #fffaf4;
+      color: #3e2f1c;
       margin: 0;
-      padding: 1rem;
+      padding: 1.5rem;
+      font-size: 1.4rem;
+      line-height: 2;
     }
     h1, h2, h3 {
-      color: #7b4c20;
+      color: #5b3e2b;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      text-align: center;
     }
     .section {
-      background-color: #fff3e6;
+      background-color: #fff3e4;
+      border-radius: 18px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    }
+    .tabs, .subtabs, .day-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .tab, .subtab, .day-tab {
+      background-color: #ecd6bf;
+      color: #3e2f1c;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .tab.active, .subtab.active, .day-tab.active {
+      background-color: #b6895c;
+      color: white;
+      border-color: #8f6c4a;
+    }
+    .exercise {
+      background-color: #ffffff;
+      border: 1px solid #e2d5ca;
       border-radius: 12px;
-      padding: 1rem;
+      padding: 1.2rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    }
+    .exercise-title {
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .steps {
+      margin-bottom: 0.5rem;
     }
     .gif {
       width: 100%;
-      border-radius: 8px;
-      margin-top: 0.5rem;
+      max-width: 380px;
+      display: block;
+      margin: 0.5rem auto 1rem;
+      border-radius: 10px;
     }
-    .audio-button {
-      background-color: #d6a96e;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 0.5rem;
-    }
-    .tracker {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+    .tracker-checkbox {
       margin-top: 1rem;
+      text-align: center;
     }
-    .tracker div {
-      width: 35px;
-      height: 35px;
-      background-color: #eee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      cursor: pointer;
+    .tracker-checkbox input {
+      transform: scale(1.3);
+      margin-left: 0.5rem;
+    }
+    .message {
+      background-color: #e6d9c6;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 1rem;
       font-weight: bold;
-    }
-    .tracker div.checked {
-      background-color: #7b4c20;
-      color: #fff;
     }
   </style>
 </head>
 <body>
-  <h1>🌿 برنامج فاطمة اليومي لتقوية الظهر</h1>
-
   <div class="section">
     <h3>✨ دعاء وبداية اليوم</h3>
     <p>اللهم ربّ الناس، أذهب البأس، اشفِ فاطمة شفاءً لا يغادر سقماً.</p>
-    <p>"وَاصْبِرْ وَمَا صَبْرُكَ إِلَّا بِاللَّهِ" (النحل: 127)</p>
+    <p style="font-weight:bold; color:#5b3e2b;">﴿ وَأَيُّوبَ إِذْ نَادَىٰ رَبَّهُ أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ ﴾ (الأنبياء: 83)
+﴿ فَاسْتَجَبْنَا لَهُ فَكَشَفْنَا مَا بِهِ مِن ضُرٍّ وَآتَيْنَاهُ أَهْلَهُ وَمِثْلَهُم مَّعَهُمْ رَحْمَةً مِّنْ عِندِنَا وَذِكْرَىٰ لِلْعَابِدِينَ ﴾ (الأنبياء: 84) </p>
+    <p style="font-weight:bold; color:#5b3e2b;">﴿ وَاصْبِرْ وَمَا صَبْرُكَ إِلَّا بِاللَّهِ ﴾ (النحل: 127)</p>
   </div>
 
-  <div class="section">
-    <h2>١. الإحماء</h2>
-    <p>تنفس عميق ورفع الذراعين</p>
-    <img class="gif" src="https://media.giphy.com/media/3orieTU9IAQKMQHRnK/giphy.gif" alt="تمرين تنفس">
-    <button class="audio-button" onclick="document.getElementById('audio1').play()">🎧 تشغيل الصوت</button>
-    <audio id="audio1" src="audio/warmup1.mp3"></audio>
-  </div>
-  	
-  <div class="section">
-  <h2>٢. تقوية العضلات</h2>
-
-  <h3>رفع الحوض (Bridge)</h3>
-  <p>استلقي على الظهر، اثني الركبتين، ارفعي الحوض بلُطف مع شدّ الأرداف، ثم انزليه ببطء.</p>
-  <img class="gif" src="https://i.pinimg.com/originals/b4/15/81/b41581c9ac4ccdd18c5bf1e4b5d7601f.gif" alt="Bridge Exercise">
-  <button class="audio-button" onclick="document.getElementById('audio-bridge').play()">🎧 تشغيل الصوت</button>
-  <audio id="audio-bridge" src="https://storage.googleapis.com/fatima-audio/bridge.mp3"></audio>
-
-  <h3>التمدد المتقاطع (Bird-Dog)</h3>
-  <p>على أربع، مدّي الذراع اليمنى والساق اليسرى في نفس الوقت. ثم بدّلي.</p>
-  <img class="gif" src="https://media.giphy.com/media/RQsuZfuylVNAYuYPup/giphy.gif" alt="Bird Dog">
-  <button class="audio-button" onclick="document.getElementById('audio-bird').play()">🎧 تشغيل الصوت</button>
-  <audio id="audio-bird" src="https://storage.googleapis.com/fatima-audio/bird-dog.mp3"></audio>
-
-  <h3>الضغط على الحائط</h3>
-  <p>قفي بشكل مستقيم واضغطي الكتفين للخلف نحو الحائط مع المحافظة على الرأس والظهر.</p>
-  <img class="gif" src="https://media.giphy.com/media/X7l7FrU8m0cVInC7Tn/giphy.gif" alt="Wall Press">
-  <button class="audio-button" onclick="document.getElementById('audio-wall').play()">🎧 تشغيل الصوت</button>
-  <audio id="audio-wall" src="https://storage.googleapis.com/fatima-audio/wall-press.mp3"></audio>
-
-  <h3>شدّ عضلات البطن بلطف</h3>
-  <p>اجلسي أو استلقي، خذي نفسًا واثني عضلات البطن كما لو كنت تشدّين السُرّة إلى الداخل، ثم ارخيها.</p>
-  <img class="gif" src="https://media.giphy.com/media/fJodV7nDfFyo2EUQOT/giphy.gif" alt="Ab tightening">
-  <button class="audio-button" onclick="document.getElementById('audio-core').play()">🎧 تشغيل الصوت</button>
-  <audio id="audio-core" src="https://storage.googleapis.com/fatima-audio/ab-tightening.mp3"></audio>
-</div>
- 
-
-  <div class="section">
-    <h2>📅 تتبع التقدم</h2>
-    <p>اضغطي على اليوم بعد الانتهاء من التمارين:</p>
-    <div class="tracker">
-      <div onclick="toggleCheck(this)">1</div>
-      <div onclick="toggleCheck(this)">2</div>
-      <div onclick="toggleCheck(this)">3</div>
-      <div onclick="toggleCheck(this)">4</div>
-      <div onclick="toggleCheck(this)">5</div>
-      <div onclick="toggleCheck(this)">6</div>
-      <div onclick="toggleCheck(this)">7</div>
-    </div>
+  <h1>🌸 برنامج فاطمة اليومي</h1>
+  <div class="tabs">
+    <div class="tab active" onclick="switchLevel(1)">المستوى ١</div>
+    <div class="tab" onclick="switchLevel(2)">المستوى ٢</div>
+    <div class="tab" onclick="switchLevel(3)">المستوى ٣</div>
   </div>
 
-  <div class="section">
-    <h3>🤍 دعاء نهاية اليوم</h3>
-    <p>اللهم بارك في صحتها، واجعل في حركتها قوة، وفي كل يوم راحة.</p>
+  <div class="subtabs" id="week-tabs">
+    <div class="subtab active" onclick="switchWeek(1)">الأسبوع ١</div>
+    <div class="subtab" onclick="switchWeek(2)">الأسبوع ٢</div>
+    <div class="subtab" onclick="switchWeek(3)">الأسبوع ٣</div>
+    <div class="subtab" onclick="switchWeek(4)">الأسبوع ٤</div>
   </div>
+
+  <div class="day-tabs" id="day-tabs">
+    <div class="day-tab active" onclick="switchDay(1)">اليوم ١</div>
+    <div class="day-tab" onclick="switchDay(2)">اليوم ٢</div>
+    <div class="day-tab" onclick="switchDay(3)">اليوم ٣</div>
+    <div class="day-tab" onclick="switchDay(4)">اليوم ٤</div>
+    <div class="day-tab" onclick="switchDay(5)">اليوم ٥</div>
+    <div class="day-tab" onclick="switchDay(6)">اليوم ٦</div>
+    <div class="day-tab" onclick="switchDay(7)">اليوم ٧</div>
+  </div>
+
+  <div class="section" id="content-area"></div>
 
   <script>
-    function toggleCheck(el) {
-      el.classList.toggle('checked');
+    const contentArea = document.getElementById('content-area');
+    let currentLevel = 1;
+    let currentWeek = 1;
+    let currentDay = 1;
+
+    const routines = {
+  1: {
+
+    w4d1: `
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: لف الجذع أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي وذراعاكِ متقاطعتان أمام صدركِ.<br>
+          ٢. لفي الجزء العلوي من الجسم إلى الجهة اليمنى ثم اليسرى بلطف.<br>
+          ٣. كرري ٦ مرات لكل جهة.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/1seated-trunk-rotation-warmup-1x1-v3.gif" alt="لف الجذع">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: تمرين Good Mornings</div>
+        <div class="steps">
+          ١. قفي مع مباعدة القدمين وذراعاكِ على صدركِ.<br>
+          ٢. انحني من عند الورك للأمام حتى يصبح ظهركِ مستقيمًا، ثم عودي.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/12-_goodmorningscorestrength_1x1_v2.gif?rev=ca9d3a6d6c344533be9abb0a536c9b61&hash=8DB3DBB5CE8E5CCAE4B23B46CB190D7F" alt="Good Mornings">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: تمدد Cat-Cow أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي ويداكِ على الركبتين.<br>
+          ٢. اثني ظهركِ للأمام ثم مديه بلطف مع الشهيق والزفير.<br>
+          ٣. كرري التمرين ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/6_seatedcatcowstretch_1x1_v2.gif" alt="Cat Cow">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w4d1"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">رائع يا فاطمة! تمارين اليوم تهدف لتليين الظهر وتقوية الجذع 🌟</div>
+    `,
+
+    w4d2: `
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: ضم الركبة إلى الصدر</div>
+        <div class="steps">
+          ١. استلقي على ظهرك واثني الركبة نحو صدرك بلطف.<br>
+          ٢. اثبتي ثم بدّلي الساق.<br>
+          ٣. كرري التمرين ٣ مرات لكل رجل.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/10_kneehugsstretch_1x1_v2.gif" alt="ركبة إلى الصدر">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: تمدد الكتف</div>
+        <div class="steps">
+          ١. اسحبي ذراعًا واحدة عبر صدركِ.<br>
+          ٢. اثبتي ثم بدّلي.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/6-shoulder-stretch-1x1-v1.gif" alt="تمدد الكتف">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: رفع الكعبين</div>
+        <div class="steps">
+          ١. قفي خلف كرسي وارفعي كعبيك ثم أنزليهما ببطء.<br>
+          ٢. كرري ٨ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/21-kitchen-heel-raises-1x1-v1.gif" alt="رفع الكعبين">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٤: تمرين البايسبس أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي وارفعي الأوزان نحو الكتفين.<br>
+          ٢. كرري ٨ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/6-seated-bicep-curls.gif" alt="بايسبس">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w4d2"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">جميل جدًا يا فاطمة! استمري في تقوية عضلاتك بلطف 💛</div>
+    `,
+
+    w4d3: `
+      <div class="message">🌙 اليوم هو يوم الراحة يا فاطمة. استمتعي بالاسترخاء وجددّي نشاطك 🌿</div>
+    `,
+
+    w4d4: `
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: لف الجذع أثناء الوقوف</div>
+        <div class="steps">
+          ١. قفي مستقيمة ومدّي الذراعين للأمام.<br>
+          ٢. لفي الجذع يمينًا ويسارًا ببطء ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/14_standingtrunkrotation_1x1_v2.gif?rev=e4df5cf9870f45cab757ef5baadaf38d&hash=5410AADDF7B955DF27A971D989A7F002" alt="لف الجذع واقفًا">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: لف الركبتين</div>
+        <div class="steps">
+          ١. استلقي واثني الركبتين.<br>
+          ٢. لفيهما بلطف إلى كل جانب ٦ مرات بالتناوب.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/8_kneerollsstretch_1x1_v2.gif" alt="لف الركبتين">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: رفع الكعبين</div>
+        <div class="steps">
+          ١. قفي خلف كرسي وارفعي كعبيك ثم أنزليهما ببطء. كرري ٨ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/21-kitchen-heel-raises-1x1-v1.gif" alt="رفع الكعبين">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٤: الوقوف من الجلوس</div>
+        <div class="steps">
+          ١. اجلسي ثم قفي وكرري ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/1-chair-sit-to-stand-1x1-v1-1.gif" alt="Sit to Stand">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w4d4"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">عمل ممتاز يا فاطمة! تمارين المقاومة بتقوي العضلات والمرونة ✨</div>
+    `,
+
+    w4d5: `
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: ضم الركبة إلى الصدر</div>
+        <div class="steps">
+          ١. استلقي واثني الساق واسحبيها بلطف نحو الصدر. كرري مع كل ساق.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/10_kneehugsstretch_1x1_v2.gif" alt="ضم الركبة">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: تمدد الرقبة</div>
+        <div class="steps">
+          ١. ميلي الرأس يمينًا ويسارًا بلطف. اثبتي قليلًا مع كل جهة.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/4-neck-stretch1x1-v1.gif" alt="تمدد الرقبة">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: تمدد الكتف</div>
+        <div class="steps">
+          ١. اسحبي الذراع بلطف نحو الصدر واثبتي ثم بدّلي.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/6-shoulder-stretch-1x1-v1.gif" alt="تمدد الكتف">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٤: الوقوف من الجلوس</div>
+        <div class="steps">
+          ١. قفي وعودي إلى الكرسي ٦ مرات ببطء وتحكم.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/1-chair-sit-to-stand-1x1-v1-1.gif" alt="Sit to Stand">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w4d5"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">أحسنتِ يا فاطمة! التمدد مهم جدًا لتحسين الحركة ✨</div>
+    `,
+
+    w4d6: `
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: تمدد الرقبة</div>
+        <div class="steps">
+          ١. اجلسي أو قفي وميلي الرأس بلطف إلى كل جانب.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/4-neck-stretch1x1-v1.gif" alt="تمدد الرقبة">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: تمرين البايسبس أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي وارفعي الأوزان الصغيرة نحو الكتفين. كرري ٨ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/6-seated-bicep-curls.gif" alt="بايسبس">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: تمدد الكتف</div>
+        <div class="steps">
+          ١. اسحبي الذراع نحو الصدر وبدّلي. اثبتي قليلًا مع كل جهة.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/6-shoulder-stretch-1x1-v1.gif" alt="تمدد الكتف">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٤: Good Mornings</div>
+        <div class="steps">
+          ١. انحني للأمام من الورك وارجعي، مع استقامة الظهر. كرري ٨ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/12-_goodmorningscorestrength_1x1_v2.gif?rev=ca9d3a6d6c344533be9abb0a536c9b61&hash=8DB3DBB5CE8E5CCAE4B23B46CB190D7F" alt="Good Mornings">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٥: لكمات أمامية أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي وارفعي الذراعين وابدئي باللكم للأمام بلطف ٣ مرات × ٢٠ ثانية.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/8-seated-forward-punches.gif" alt="لكمات أمامية">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w4d6"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">كل الجسم اتحرك اليوم! شطووورة يا فاطمة 💪💗</div>
+    `,
+
+    w4d7: `
+      <div class="message">🧘‍♀️ يوم الراحة الأخير قبل بدء المستوى التالي! افتخري بنفسك يا فاطمة 🤍</div>
+
+
+  `,    w3d1: `
+          <div class="exercise">
+            <div class="exercise-title">التمرين ١: لف الجذع أثناء الجلوس</div>
+            <div class="steps">
+              ١. اجلسي على الكرسي وذراعاكِ متقاطعتان أمام صدركِ.<br>
+              ٢. لفي الجزء العلوي من الجسم إلى الجهة اليمنى ثم اليسرى بلطف.<br>
+              ٣. كرري ٦ مرات لكل جهة.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/1seated-trunk-rotation-warmup-1x1-v3.gif" alt="لف الجذع">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٢: لف الركبتين يمين ويسار</div>
+            <div class="steps">
+              ١. استلقي على ظهرك واثني الركبتين.<br>
+              ٢. لفي الركبتين بلطف إلى أحد الجانبين حتى تشعري بتمدد بسيط.<br>
+              ٣. عودي للوضع الأساسي وكرري للجهة الأخرى. ٦ مرات بالتناوب.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/8_kneerollsstretch_1x1_v2.gif" alt="لف الركبتين">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٣: تمرين Good Mornings</div>
+            <div class="steps">
+              ١. قفي مستقيمة، اليدان خلف الرأس.<br>
+              ٢. انحني للأمام ببطء مع الحفاظ على استقامة الظهر.<br>
+              ٣. عودي ببطء وكرري التمرين ٦ مرات.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/12-_goodmorningscorestrength_1x1_v2.gif" alt="Good Mornings">
+          </div>
+
+          <div class="tracker-checkbox">
+            <label><input type="checkbox" id="l1w3d1"> ✔️ تم إنجاز تمارين اليوم</label>
+          </div>
+          <div class="message">رائع يا فاطمة! بداية قوية لأسبوعك الجديد 💪🌸</div>
+        
+    `,   w3d2: `
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: تمدد ربلة الساق أثناء الوقوف</div>
+        <div class="steps">
+          ١. قفي مقابل الحائط وضعي يديكِ عليه.<br>
+          ٢. اثني الساق الأمامية ومدي الأخرى للخلف مع الكعب على الأرض.<br>
+          ٣. اثبتي ثم بدّلي الساق.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/1-standing-calf-stretch-1x1-v1-.gif" alt="تمدد ربلة الساق">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: تمدد الكتف</div>
+        <div class="steps">
+          ١. اسحبي ذراعًا واحدة عبر صدركِ بواسطة اليد الأخرى.<br>
+          ٢. اثبتي على هذا الوضع لعدة ثوانٍ ثم بدّلي الذراع.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/6-shoulder-stretch-1x1-v1.gif" alt="تمدد الكتف">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: تمرين الوقوف من الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على كرسي ثابت وقدماكِ على الأرض.<br>
+          ٢. قفي ببطء ثم اجلسي ببطء.<br>
+          ٣. كرري التمرين ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/1-chair-sit-to-stand-1x1-v1-1.gif" alt="Sit to Stand">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٤: تمرين عضلة البايسبس أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي وامسكي بزجاجتين صغيرتين.<br>
+          ٢. اثني المرفقين وارفعي الزجاجات نحو الكتفين.<br>
+          ٣. كرري ٨ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/6-seated-bicep-curls.gif" alt="تمرين البايسبس">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w3d2"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">ممتاز يا فاطمة! كل تمرين يقربك خطوة نحو الراحة 💪🌼</div>
+
+    `,   w3d3: `
+
+          <div class="message">🧘‍♀️ اليوم هو يوم الراحة لفاطمة. خذي نفسًا عميقًا واستمتعي بيومك 🤍</div>
+
+    `,   w3d4: `
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: تمدد Cat-Cow أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي ويداكِ على الركبتين.<br>
+          ٢. اثني ظهركِ للأمام ببطء، ثم مدي ظهركِ بلطف مع التنفس المنتظم.<br>
+          ٣. كرري التمرين ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/6_seatedcatcowstretch_1x1_v2.gif" alt="Cat Cow">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: لف الجذع أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي وذراعاكِ متقاطعتان أمام صدركِ.<br>
+          ٢. لفي الجزء العلوي من الجسم إلى الجهة اليمنى ثم اليسرى بلطف.<br>
+          ٣. كرري ٦ مرات لكل جهة.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/1seated-trunk-rotation-warmup-1x1-v3.gif" alt="لف الجذع">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: رفع الكعبين</div>
+        <div class="steps">
+          ١. قفي خلف الكرسي وامسكي به للتوازن.<br>
+          ٢. ارفعي كعبيك ببطء ثم انزليهم.<br>
+          ٣. كرري التمرين ٨ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/21-kitchen-heel-raises-1x1-v1.gif" alt="رفع الكعبين">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٤: تمرين الوقوف من الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على كرسي ثابت وقدماكِ على الأرض.<br>
+          ٢. قفي ببطء ثم اجلسي ببطء.<br>
+          ٣. كرري التمرين ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/1-chair-sit-to-stand-1x1-v1-1.gif" alt="Sit to Stand">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w3d4"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">أحسنتِ يا فاطمة! الاستمرارية تقوي جسدك يومًا بعد يوم 💪🌼</div>
+    
+    `,     w3d5: `
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: تمدد الرقبة</div>
+        <div class="steps">
+          ١. اجلسي أو قفي بشكل مستقيم.<br>
+          ٢. ميلي الرأس بلطف إلى جانب الكتف حتى تشعري بتمدد الرقبة.<br>
+          ٣. اثبتي لعدة ثوانٍ ثم بدّلي الجهة.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/4-neck-stretch1x1-v1.gif?rev=8bd38fae6f404534a10483b8f18951e5&hash=0E2665D18F6DE86761A26C7D134509AC" alt="تمدد الرقبة">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: تمدد ربلة الساق أثناء الوقوف</div>
+        <div class="steps">
+          ١. قفي مقابل الحائط وضعي يديكِ عليه.<br>
+          ٢. اثني الساق الأمامية ومدي الأخرى للخلف مع كعب ثابت.<br>
+          ٣. اثبتي ثم بدّلي الساق.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/1-standing-calf-stretch-1x1-v1-.gif" alt="تمدد ربلة الساق">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: تمدد الكتف</div>
+        <div class="steps">
+          ١. اسحبي ذراعًا واحدة عبر صدركِ بواسطة اليد الأخرى.<br>
+          ٢. اثبتي على هذا الوضع لعدة ثوانٍ ثم بدّلي الذراع.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/6-shoulder-stretch-1x1-v1.gif?rev=0e75d9f5e8d84efea6586f7967a64934&hash=20DCAFB46FFA43F46B80D02FA6F84105" alt="تمدد الكتف">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٤: تمرين الوقوف من الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على كرسي ثابت وقدماكِ على الأرض.<br>
+          ٢. قفي ببطء ثم اجلسي ببطء.<br>
+          ٣. كرري التمرين ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/1-chair-sit-to-stand-1x1-v1-1.gif?rev=9850a41489e54485b2ac622bd2cd4a1f&hash=AF56F41082B5EECA042107169D83D38E" alt="Sit to Stand">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w3d5"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">رااائعة يا فاطمة! التمدد والوقوف يساهمان في تخفيف الألم وزيادة النشاط ✨</div>
+    `,
+
+    w3d6: `
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: اللكمات الأمامية أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي وارفعي الذراعين للأمام.<br>
+          ٢. قومي بلكمات خفيفة للأمام بالتناوب.<br>
+          ٣. استمري ٢٠ ثانية وكرري ٣ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/8-seated-forward-punches.gif" alt="لكمات أمامية">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: تمدد Cat-Cow أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي ويداكِ على الركبتين.<br>
+          ٢. اثني ظهركِ للأمام ثم مديه بلطف مع الشهيق والزفير.<br>
+          ٣. كرري التمرين ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/6_seatedcatcowstretch_1x1_v2.gif" alt="Cat Cow">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: لف الركبتين يمين ويسار</div>
+        <div class="steps">
+          ١. استلقي واثني الركبتين.<br>
+          ٢. لفي الركبتين ببطء إلى اليمين، ثم إلى اليسار. كرري ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/8_kneerollsstretch_1x1_v2.gif" alt="لف الركبتين">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٤: تمرين الوقوف من الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على كرسي ثابت.<br>
+          ٢. قفي ببطء ثم اجلسي مجددًا ببطء. كرري ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/1-chair-sit-to-stand-1x1-v1-1.gif" alt="Sit to Stand">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٥: تمرين عضلة البايسبس أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي وامسكي بزجاجتين صغيرتين.<br>
+          ٢. اثني المرفقين وارفعي الزجاجات نحو الكتفين. كرري ٨ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/6-seated-bicep-curls.gif" alt="تمرين البايسبس">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w3d6"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">كل الجسم اشتغل اليوم يا فاطمة! 💪💛</div>
+    `,
+
+    w3d7: `
+      <div class="message">🧘‍♀️ اليوم راحة لفاطمة. خذي نفسًا عميقًا واستمتعي براحتك 🤍</div>
+    
+    `,   w2d1: `      
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: لف الجذع أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي ولفي الجزء العلوي من الجسم يمينًا ويسارًا بلطف.<br>
+          ٢. كرري ٦ مرات لكل جهة.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/1seated-trunk-rotation-warmup-1x1-v3.gif" alt="لف الجذع">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: Good Mornings</div>
+        <div class="steps">
+          ١. قفي مستقيمة، اليدان خلف الرأس.<br>
+          ٢. انحني للأمام ببطء مع الحفاظ على استقامة الظهر.<br>
+          ٣. عودي ببطء وكرري التمرين ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/12-_goodmorningscorestrength_1x1_v2.gif?rev=ca9d3a6d6c344533be9abb0a536c9b61&hash=8DB3DBB5CE8E5CCAE4B23B46CB190D7F" alt="Good Mornings">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: لف الجذع أثناء الوقوف</div>
+        <div class="steps">
+          ١. قفي بشكل مستقيم وقدماكِ على مستوى الوركين.<br>
+          ٢. لفي الجذع إلى اليمين ثم اليسار ببطء.<br>
+          ٣. كرري ٦ مرات لكل جهة.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/2_standingtrunkrotationwarmup_1x1_v2.gif?rev=423ac80d8c14443781ad77ce41bf798d&hash=0496ADC52F1F75C8A12F18C16D15C31F" alt="لف الجذع واقفة">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w2d1"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">أحسنتِ يا فاطمة! تمارين اليوم تقوي العضلات وتخفف الضغط ✨</div>
+    `,   w2d2: `
+      <div class="exercise">
+        <div class="exercise-title">التمرين ١: تمدد الكتف</div>
+        <div class="steps">
+          ١. اسحبي ذراعًا واحدة عبر صدركِ بواسطة اليد الأخرى.<br>
+          ٢. اثبتي على هذا الوضع لعدة ثوانٍ ثم بدّلي الذراع.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/6-shoulder-stretch-1x1-v1.gif?rev=0e75d9f5e8d84efea6586f7967a64934&hash=20DCAFB46FFA43F46B80D02FA6F84105" alt="تمدد الكتف">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٢: تمدد الرقبة</div>
+        <div class="steps">
+          ١. اجلسي أو قفي بشكل مستقيم.<br>
+          ٢. ميلي الرأس بلطف إلى جانب الكتف حتى تشعري بتمدد الرقبة.<br>
+          ٣. اثبتي لعدة ثوانٍ ثم بدّلي الجهة.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/4-neck-stretch1x1-v1.gif?rev=8bd38fae6f404534a10483b8f18951e5&hash=0E2665D18F6DE86761A26C7D134509AC" alt="تمدد الرقبة">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٣: اللكمات الأمامية أثناء الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على الكرسي وارفعي الذراعين للأمام.<br>
+          ٢. قومي بلكمات خفيفة للأمام بالتناوب.<br>
+          ٣. استمري ٢٠ ثانية وكرري ٣ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/8-seated-forward-punches.gif" alt="لكمات أمامية">
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">التمرين ٤: تمرين الوقوف من الجلوس</div>
+        <div class="steps">
+          ١. اجلسي على كرسي ثابت وقدماكِ على الأرض.<br>
+          ٢. قفي ببطء ثم اجلسي ببطء.<br>
+          ٣. كرري التمرين ٦ مرات.
+        </div>
+        <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/1-chair-sit-to-stand-1x1-v1-1.gif?rev=9850a41489e54485b2ac622bd2cd4a1f&hash=AF56F41082B5EECA042107169D83D38E" alt="Sit to Stand">
+      </div>
+
+      <div class="tracker-checkbox">
+        <label><input type="checkbox" id="l1w2d2"> ✔️ تم إنجاز تمارين اليوم</label>
+      </div>
+      <div class="message">جيد جدًا! هذا النوع من التمارين يحسّن الدورة الدموية ويزيد النشاط ✨</div>
+    `,
+      w2d3: `
+          <div class="message">🧘‍♀️ اليوم هو يوم الراحة لفاطمة. خذي نفسًا عميقًا واستمتعي بيومك 🤍</div>
+     `,    w2d4: `
+        <div class="exercise">
+          <div class="exercise-title">التمرين ١: لف الركبتين يمين ويسار</div>
+          <div class="steps">
+            ١. استلقي على ظهرك واثني الركبتين.<br>
+            ٢. لفي الركبتين بلطف إلى أحد الجانبين حتى تشعري بتمدد بسيط.<br>
+            ٣. عودي للوضع الأساسي وكرري للجهة الأخرى. ٦ مرات بالتناوب.
+          </div>
+          <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/8_kneerollsstretch_1x1_v2.gif" alt="لف الركبتين">
+        </div>
+      
+        <div class="exercise">
+          <div class="exercise-title">التمرين ٢: لف الجذع أثناء الجلوس</div>
+          <div class="steps">
+            ١. اجلسي على الكرسي مع استقامة الظهر وذراعيكِ أمام صدركِ.<br>
+            ٢. لفي الجزء العلوي من الجسم إلى اليمين بلطف ثم اليسار.<br>
+            ٣. كرري ٦ مرات لكل جهة.
+          </div>
+          <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/1seated-trunk-rotation-warmup-1x1-v3.gif" alt="لف الجذع">
+        </div>
+      
+        <div class="exercise">
+          <div class="exercise-title">التمرين ٣: رفع الكعبين</div>
+          <div class="steps">
+            ١. قفي خلف كرسي وامسكي به للتوازن.<br>
+            ٢. ارفعي الكعبين عن الأرض واثبتي للحظة، ثم انزلي ببطء.<br>
+            ٣. كرري التمرين ٨ مرات.
+          </div>
+          <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/21-kitchen-heel-raises-1x1-v1.gif" alt="رفع الكعبين">
+        </div>
+      
+        <div class="exercise">
+          <div class="exercise-title">التمرين ٤: اللكمات الأمامية أثناء الجلوس</div>
+          <div class="steps">
+            ١. اجلسي على الكرسي وارفعي الذراعين للأمام.<br>
+            ٢. قومي بلكمات خفيفة للأمام بالتناوب.<br>
+            ٣. استمري ٢٠ ثانية وكرري ٣ مرات.
+          </div>
+          <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/8-seated-forward-punches.gif" alt="لكمات أمامية">
+        </div>
+      
+        <div class="tracker-checkbox">
+          <label><input type="checkbox" id="l1w2d4"> ✔️ تم إنجاز تمارين اليوم</label>
+        </div>
+        <div class="message">جيد جدًا يا فاطمة! هذه التمارين تنشّط الدورة وتقوّي الظهر 🧡</div>
+      `,     w2d5: `
+  <div class="exercise">
+    <div class="exercise-title">التمرين ١: تمدد الرقبة</div>
+    <div class="steps">
+      ١. اجلسي أو قفي بشكل مستقيم.<br>
+      ٢. ميلي الرأس بلطف إلى جانب الكتف حتى تشعري بتمدد الرقبة.<br>
+      ٣. اثبتي لعدة ثوانٍ ثم بدّلي الجهة.
+    </div>
+    <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/4-neck-stretch1x1-v1.gif?rev=8bd38fae6f404534a10483b8f18951e5&hash=0E2665D18F6DE86761A26C7D134509AC" alt="تمدد الرقبة">
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-title">التمرين ٢: تمدد الكتف</div>
+    <div class="steps">
+      ١. اسحبي ذراعًا واحدة عبر صدركِ بواسطة اليد الأخرى.<br>
+      ٢. اثبتي على هذا الوضع لعدة ثوانٍ ثم بدّلي الذراع.
+    </div>
+    <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/6-shoulder-stretch-1x1-v1.gif?rev=0e75d9f5e8d84efea6586f7967a64934&hash=20DCAFB46FFA43F46B80D02FA6F84105" alt="تمدد الكتف">
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-title">التمرين ٣: تمدد ربلة الساق أثناء الوقوف</div>
+    <div class="steps">
+      ١. قفي مقابل الحائط وضعي يديكِ عليه.<br>
+      ٢. اثني الساق الأمامية ومدي الأخرى للخلف مع كعب ثابت.<br>
+      ٣. اثبتي ثم بدّلي الساق.
+    </div>
+    <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/1-standing-calf-stretch-1x1-v1-.gif" alt="تمدد ربلة الساق">
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-title">التمرين ٤: تمرين الوقوف من الجلوس</div>
+    <div class="steps">
+      ١. اجلسي على كرسي ثابت وقدماكِ على الأرض.<br>
+      ٢. قفي ببطء ثم اجلسي ببطء.<br>
+      ٣. كرري التمرين ٦ مرات.
+    </div>
+    <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/1-chair-sit-to-stand-1x1-v1-1.gif?rev=9850a41489e54485b2ac622bd2cd4a1f&hash=AF56F41082B5EECA042107169D83D38E" alt="Sit to Stand">
+  </div>
+
+  <div class="tracker-checkbox">
+    <label><input type="checkbox" id="l1w2d5"> ✔️ تم إنجاز تمارين اليوم</label>
+  </div>
+  <div class="message">رااائعة يا فاطمة! الاستمرار هو مفتاح الراحة 💪✨</div>
+
+  `,     w2d6: `
+  <div class="exercise">
+    <div class="exercise-title">التمرين ١: لف الجذع أثناء الجلوس</div>
+    <div class="steps">
+      ١. اجلسي على الكرسي وذراعاكِ متقاطعتان أمام صدركِ.<br>
+      ٢. لفي الجزء العلوي من الجسم إلى الجهة اليمنى ثم اليسرى بلطف.<br>
+      ٣. كرري ٦ مرات لكل جهة.
+    </div>
+    <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/1seated-trunk-rotation-warmup-1x1-v3.gif" alt="لف الجذع">
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-title">التمرين ٢: تمدد ربلة الساق أثناء الوقوف</div>
+    <div class="steps">
+      ١. قفي مقابل الحائط وضعي يديكِ عليه.<br>
+      ٢. اثني الساق الأمامية ومدي الأخرى للخلف مع كعب ثابت على الأرض.<br>
+      ٣. اثبتي لعدة ثوانٍ ثم بدّلي.
+    </div>
+    <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/1-standing-calf-stretch-1x1-v1-.gif" alt="تمدد ربلة الساق">
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-title">التمرين ٣: لف الجذع أثناء الوقوف</div>
+    <div class="steps">
+      ١. قفي بشكل مستقيم وقدماكِ ثابتتان.<br>
+      ٢. لفي الجذع إلى اليمين ثم إلى اليسار ببطء.<br>
+      ٣. كرري ٦ مرات لكل جهة.
+    </div>
+    <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/2_standingtrunkrotationwarmup_1x1_v2.gif?rev=423ac80d8c14443781ad77ce41bf798d&hash=0496ADC52F1F75C8A12F18C16D15C31F" alt="لف الجذع واقفة">
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-title">التمرين ٤: ضم الركبة إلى الصدر</div>
+    <div class="steps">
+      ١. استلقي واسحبي ركبة واحدة نحو صدركِ بلطف.<br>
+      ٢. اثبتي ٥ ثوانٍ ثم بدّلي الساق.<br>
+      ٣. كرري ٣ مرات لكل ساق.
+    </div>
+    <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/10_kneehugsstretch_1x1_v2.gif" alt="ضم الركبة">
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-title">التمرين ٥: تمدد Cat-Cow أثناء الجلوس</div>
+    <div class="steps">
+      ١. اجلسي على الكرسي ويداكِ على الركبتين.<br>
+      ٢. اثني ظهركِ للأمام ببطء، ثم مدي ظهركِ بلطف مع الشهيق والزفير.<br>
+      ٣. كرري التمرين ٦ مرات.
+    </div>
+    <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/6_seatedcatcowstretch_1x1_v2.gif" alt="Cat Cow">
+  </div>
+
+  <div class="tracker-checkbox">
+    <label><input type="checkbox" id="l1w2d6"> ✔️ تم إنجاز تمارين اليوم</label>
+  </div>
+  <div class="message">يوم كامل من النشاط يا فاطمة! الاستمرارية تبني القوة 🌟</div>
+`,
+    w2d7: `
+  <div class="message">🧘‍♀️ اليوم راحة تامة لفاطمة. خذي قسطًا من الراحة واشربي الكثير من الماء 🤍</div>
+`,
+    w1d1: `
+          <div class="exercise">
+            <div class="exercise-title">التمرين ١: لف الجذع أثناء الجلوس</div>
+            <div class="steps">
+              ١. اجلسي على الكرسي مع استقامة الظهر.<br>
+              ٢. قومي بضم الذراعين أمام صدركِ.<br>
+              ٣. لفي الجزء العلوي من الجسم إلى اليمين بلطف ثم عودي للوسط.<br>
+              ٤. لفي إلى اليسار وكرري التمرين ٦ مرات لكل جهة.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/1seated-trunk-rotation-warmup-1x1-v3.gif" alt="لف الجذع">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٢: تمدد Cat-Cow أثناء الجلوس</div>
+            <div class="steps">
+              ١. اجلسي على الكرسي ويداكِ على الركبتين.<br>
+              ٢. اثني ظهركِ للأمام ببطء مع النظر إلى الأسفل.<br>
+              ٣. ثم مدي ظهركِ للأعلى مع النظر للأمام بلطف.<br>
+              ٤. كرري التمرين ٦ مرات ببطء مع التنفس المنتظم.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/6_seatedcatcowstretch_1x1_v2.gif" alt="Cat Cow">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٣: لف الركبتين يمين ويسار</div>
+            <div class="steps">
+              ١. استلقي على ظهرك واثني الركبتين، والقدمين مستويتين على الأرض.<br>
+              ٢. لفي الركبتين بلطف إلى اليمين ثم عودي إلى المنتصف.<br>
+              ٣. لفي إلى اليسار وكرري. ٦ مرات بالتناوب.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/8_kneerollsstretch_1x1_v2.gif" alt="لف الركبتين">
+          </div>
+
+          <div class="tracker-checkbox">
+            <label><input type="checkbox" id="l1w1d2"> ✔️ تم إنجاز تمارين اليوم</label>
+          </div>
+          <div class="message">ممتاز يا فاطمة! التقدم يأتي مع الاستمرار 🌷</div>
+        `,    w1d2: `
+          <div class="exercise">
+            <div class="exercise-title">التمرين ١: ضم الركبة إلى الصدر</div>
+            <div class="steps">
+              ١. استلقي على ظهرك على بساط التمرين.<br>
+              ٢. اثني الركبة اليمنى واسحبيها باتجاه الصدر بلطف.<br>
+              ٣. اثبتي ٥ ثوانٍ، ثم بدّلي الساق.<br>
+              ٤. كرري التمرين ٣ مرات لكل ساق.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/10_kneehugsstretch_1x1_v2.gif" alt="ضم الركبة">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٢: تمدد ربلة الساق أثناء الوقوف</div>
+            <div class="steps">
+              ١. قفي مقابل الحائط وضعي يديكِ عليه.<br>
+              ٢. اثني الساق الأمامية ومدي الأخرى للخلف.<br>
+              ٣. اثبتي ٥ ثوانٍ ثم بدّلي الأرجل.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/1-standing-calf-stretch-1x1-v1-.gif" alt="تمدد عضلة الساق">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٣: اللكمات الأمامية أثناء الجلوس</div>
+            <div class="steps">
+              ١. اجلسي على الكرسي وارفعي الذراعين للأمام.<br>
+              ٢. قومي بلكمات خفيفة للأمام بالتناوب.<br>
+              ٣. استمري ٢٠ ثانية وكرري ٣ مرات.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/8-seated-forward-punches.gif" alt="لكمات أمامية">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٤: رفع الكعبين</div>
+            <div class="steps">
+              ١. قفي خلف الكرسي وامسكي به للتوازن.<br>
+              ٢. ارفعي كعبيك ببطء ثم انزليهم.<br>
+              ٣. كرري التمرين ٨ مرات.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/21-kitchen-heel-raises-1x1-v1.gif" alt="رفع الكعبين">
+          </div>
+
+          <div class="tracker-checkbox">
+            <label><input type="checkbox" id="l1w1d2"> ✔️ تم إنجاز تمارين اليوم</label>
+          </div>
+          <div class="message">أحسنتِ! التمدد والحركة يخففان من التصلب 🌼</div>
+        `,    w1d3: `
+          <div class="message">🧘‍♀️ اليوم هو يوم الراحة لفاطمة. خذي نفسًا عميقًا واستمتعي بيومك 🤍</div>
+        `,    w1d4: `
+          <div class="exercise">
+            <div class="exercise-title">التمرين ١: تمدد Cat-Cow أثناء الجلوس</div>
+            <div class="steps">
+              ١. اجلسي على الكرسي ويداكِ على الركبتين.<br>
+              ٢. اثني ظهركِ للأمام ببطء، ثم مدي ظهركِ بلطف.<br>
+              ٣. كرري التمرين ٦ مرات.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/6_seatedcatcowstretch_1x1_v2.gif" alt="Cat Cow">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٢: تمرين Good Mornings</div>
+            <div class="steps">
+              ١. قفي والقدمان متباعدتان بمستوى الورك.<br>
+              ٢. ضعي اليدين على الوركين أو خلف الرأس.<br>
+              ٣. انحني للأمام ببطء مع ظهر مستقيم، ثم عودي لوضع البداية.<br>
+              ٤. كرري التمرين ٦ مرات.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/12-_goodmorningscorestrength_1x1_v2.gif?rev=ca9d3a6d6c344533be9abb0a536c9b61&hash=8DB3DBB5CE8E5CCAE4B23B46CB190D7F" alt="Good Mornings">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٣: رفع الكعبين</div>
+            <div class="steps">
+              ١. قفي خلف الكرسي وامسكي به للتوازن.<br>
+              ٢. ارفعي كعبيك ببطء ثم انزليهم.<br>
+              ٣. كرري التمرين ٨ مرات.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/21-kitchen-heel-raises-1x1-v1.gif" alt="رفع الكعبين">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٤: تمرين عضلة البايسبس أثناء الجلوس</div>
+            <div class="steps">
+              ١. اجلسي على الكرسي وامسكي زجاجتين صغيرتين.<br>
+              ٢. اثني المرفقين وارفعي الزجاجات نحو الكتفين.<br>
+              ٣. كرري ٨ مرات.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/6-seated-bicep-curls.gif?rev=b6e0284b70fd4749ab90588b4d54bed3&hash=7A93602DC3FE36EB7015EDF4250FFB5C" alt="تمرين البايسبس">
+          </div>
+
+          <div class="tracker-checkbox">
+            <label><input type="checkbox" id="l1w1d4"> ✔️ تم إنجاز تمارين اليوم</label>
+          </div>
+          <div class="message">ممتاز يا فاطمة! العضلات القوية تحمي الظهر 🧡</div>
+          
+        `,    w1d5: `
+          <div class="exercise">
+            <div class="exercise-title">التمرين ١: تمدد الرقبة</div>
+            <div class="steps">
+              ١. اجلسي أو قفي بشكل مستقيم.<br>
+              ٢. ميلي الرأس بلطف إلى جانب الكتف حتى تشعري بتمدد الرقبة.<br>
+              ٣. اثبتي لعدة ثوانٍ ثم بدّلي الجهة.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/4-neck-stretch1x1-v1.gif?rev=8bd38fae6f404534a10483b8f18951e5&hash=0E2665D18F6DE86761A26C7D134509AC" alt="تمدد الرقبة">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٢: تمدد الكتف</div>
+            <div class="steps">
+              ١. اسحبي ذراعًا واحدة عبر صدركِ بواسطة اليد الأخرى.<br>
+              ٢. اثبتي على هذا الوضع لعدة ثوانٍ ثم بدّلي الذراع.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/6-shoulder-stretch-1x1-v1.gif?rev=0e75d9f5e8d84efea6586f7967a64934&hash=20DCAFB46FFA43F46B80D02FA6F84105" alt="تمدد الكتف">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٣: تمدد ربلة الساق أثناء الوقوف</div>
+            <div class="steps">
+              ١. قفي مقابل الحائط وضعي يديكِ عليه.<br>
+              ٢. اثني الساق الأمامية ومدي الأخرى للخلف مع كعب ثابت.<br>
+              ٣. اثبتي ثم بدّلي الساق.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/1-standing-calf-stretch-1x1-v1-.gif" alt="تمدد ربلة الساق">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٤: تمرين الوقوف من الجلوس</div>
+            <div class="steps">
+              ١. اجلسي على كرسي ثابت وقدماكِ على الأرض.<br>
+              ٢. قفي ببطء ثم اجلسي ببطء.<br>
+              ٣. كرري التمرين ٦ مرات.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/1-chair-sit-to-stand-1x1-v1-1.gif?rev=9850a41489e54485b2ac622bd2cd4a1f&hash=AF56F41082B5EECA042107169D83D38E" alt="Sit to Stand">
+          </div>
+
+          <div class="tracker-checkbox">
+            <label><input type="checkbox" id="l1w1d5"> ✔️ تم إنجاز تمارين اليوم</label>
+          </div>
+          <div class="message">جميل! التمدد المنتظم يساعد في منع التشنجات 💫</div>
+        `,
+        w1d6: `
+          <div class="exercise">
+            <div class="exercise-title">التمرين ١: تمدد الكتف</div>
+            <div class="steps">
+              ١. اسحبي ذراعًا واحدة عبر صدركِ.<br>
+              ٢. اثبتي ثم بدّلي الذراع.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/november-2024/activity/stretching-exercises/6-shoulder-stretch-1x1-v1.gif?rev=0e75d9f5e8d84efea6586f7967a64934&hash=20DCAFB46FFA43F46B80D02FA6F84105" alt="تمدد الكتف">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٢: لف الجذع أثناء الجلوس</div>
+            <div class="steps">
+              ١. اجلسي على الكرسي مع استقامة الظهر.<br>
+              ٢. لفي الجزء العلوي من الجسم إلى اليمين بلطف ثم اليسار.<br>
+              ٣. كرري التمرين ٦ مرات لكل جهة.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/1seated-trunk-rotation-warmup-1x1-v3.gif" alt="لف الجذع">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٣: ضم الركبة إلى الصدر</div>
+            <div class="steps">
+              ١. استلقي واسحبي ركبة نحو الصدر.<br>
+              ٢. اثبتي ٥ ثوانٍ ثم بدّلي الساق.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/feb-2024/activity/exercises-for-lower-back-pain/10_kneehugsstretch_1x1_v2.gif" alt="ضم الركبة">
+          </div>
+
+          <div class="exercise">
+            <div class="exercise-title">التمرين ٤: عضلة البايسبس أثناء الجلوس</div>
+            <div class="steps">
+              ١. اجلسي وارفعي زجاجتين للأعلى.<br>
+              ٢. كرري التمرين ٨ مرات.
+            </div>
+            <img class="gif" src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/2024/may-2024/activity/strength-exercises-to-do-at-home/6-seated-bicep-curls.gif" alt="بايسبس">
+          </div>
+
+          <div class="tracker-checkbox">
+            <label><input type="checkbox" id="l1w1d6"> ✔️ تم إنجاز تمارين اليوم</label>
+          </div>
+          <div class="message">يوم كامل يا فاطمة! أحسنت 💪</div>
+        `,
+        w1d7: `
+          <div class="message">🧘‍♀️ اليوم راحة تامة لفاطمة. اشربي الماء وخذي قسطًا من الراحة 🤍</div>
+        `
+        
+      }
+    };
+
+    function switchLevel(level) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab')[level - 1].classList.add('active');
+      currentLevel = level;
+      renderContent();
     }
+
+    function switchWeek(week) {
+      document.querySelectorAll('.subtab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.subtab')[week - 1].classList.add('active');
+      currentWeek = week;
+      renderContent();
+    }
+
+    function switchDay(day) {
+      document.querySelectorAll('.day-tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.day-tab')[day - 1].classList.add('active');
+      currentDay = day;
+      renderContent();
+    }
+
+    function renderContent() {
+      const id = `l${currentLevel}w${currentWeek}d${currentDay}`;
+      const routine = routines[currentLevel]?.[`w${currentWeek}d${currentDay}`] || '<p>🚧 التمارين غير متوفرة لهذا اليوم بعد.</p>';
+      contentArea.innerHTML = `<h2>📅 تمارين المستوى ${currentLevel} - الأسبوع ${currentWeek} - اليوم ${currentDay}</h2>` + routine;
+      const checkbox = document.getElementById(id);
+      if (checkbox && localStorage.getItem(id) === 'true') checkbox.checked = true;
+      if (checkbox) {
+        checkbox.addEventListener('change', function () {
+          localStorage.setItem(id, this.checked);
+        });
+      }
+    }
+
+    renderContent();
   </script>
+
+<script>
+  // ... existing JS code ...
+
+  // 👇 ضع كود التذكير هنا في النهاية
+  /* إشعارات التمارين اليومية */
+  if (Notification.permission !== 'granted') {
+    Notification.requestPermission();
+  }
+
+  function sendExerciseNotification(timeLabel) {
+    const messages = {
+      morning: "🌞 صباح الخير! وقت التمارين يا فاطمة، نبدأ يومنا بنشاط!\n\nسُبْحَانَ اللهِ وَبِحَمْدِهِ: عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ",
+    afternoon: "🌸 لا تنسي تمرينك اليوم! حتى 10 دقائق تفرق ✨\n\nسُبْحَانَ اللهِ وَبِحَمْدِهِ: عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ"
+    };
+
+    const msg = messages[timeLabel];
+    if (Notification.permission === 'granted') {
+      new Notification("💪 تذكير بالتمرين", { body: msg });
+    }
+  }
+
+  setInterval(() => {
+    const now = new Date();
+    const utcHour = now.getUTCHours();
+    const cairoHour = (utcHour + 2) % 24;
+    const minutes = now.getMinutes();
+
+    if (minutes === 0) {
+      if (cairoHour === 9) sendExerciseNotification("morning");
+      if (cairoHour === 14) sendExerciseNotification("afternoon");
+    }
+  }, 60000); // Check every minute
+
+/* رسالة تهنئة بعد إنهاء الأسبوع */
+function checkWeeklyCompletion() {
+  const weekTabs = document.querySelectorAll('.subtab');
+  const currentWeekIndex = currentWeek - 1;
+  const daysInWeek = 6; // 6 exercise days, rest on 7th
+  let completed = 0;
+  for (let i = 1; i <= daysInWeek; i++) {
+    const checkbox = document.getElementById(`l${currentLevel}w${currentWeek}d${i}`);
+    if (checkbox && checkbox.checked) completed++;
+  }
+
+  if (completed === daysInWeek) {
+    const msg = document.createElement('div');
+    msg.className = 'message';
+    msg.innerText = `🎉 أحسنت يا فاطمة! لقد أنهيتِ الأسبوع ${currentWeek} بالكامل! استمري على هذا النشاط 💪💛`;
+    contentArea.appendChild(msg);
+  }
+}
+</script>
+
 </body>
 </html>
